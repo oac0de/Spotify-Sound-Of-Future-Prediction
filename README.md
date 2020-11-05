@@ -62,6 +62,9 @@ The real goal here was to practice using LSTM's however I did baseline modeling 
 **Best RMSE: LSTM with differenced data**
 <img src='~/../Images/best_lstm_loss_curve.png'>
 
+### Brief Intro to LSTM Neural Networks
+So how do LSTM's work exactly? To start, LSTM stands for Long-Short Term Memory. Like other Neural Networks, there are layers and hidden layers which can be fine-tuned. However the nature of what is going on with this Recurrent Neural Network (RNN) is a bit different. LSTM's models essentially give greater weight to short term data points, while forgetting older, long-term data points. The data must be sequenced into a series of input steps (which you define) for each output step (step being the value for that point in time). The output step is then fed back into the next sequence of input steps, forgetting the oldest step. 
+
 ### Forecasting Future Values with Best LSTM Model
 Here is a chart representing the forecasts to 2025 for all features which were normalized (and could fit on the same y-axis):
 <img src='~/../Images/forecasted_normalized_features.png'>
@@ -69,7 +72,7 @@ Here is a chart representing the forecasts to 2025 for all features which were n
 ## Filtering For Artists "Ahead of Their Time"
 I decided to drop some features from the modeling which had the same median values throughout history, such as 'explicit' and 'mode'.
 
-Unfortunately, our dataset did not contain any songs which completely matched all of the features' predicted (median) values. I resorted to filtering through the data using an interval of each prediction's model RMSE from it's predicted value, for songs most close to the forecasted values of 2025.
+So our dataset did not contain any songs which completely matched all of the features' predicted (median) values. I resorted to filtering through the data using an interval of each feature's model RMSE from it's predicted value, for songs most close to the forecasted values of 2025.
 
 **Most "Ahead of Their Time" Artist:** 
 [Twenty One Pilots - Tear In My Heart](https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1?highlight=spotify:track:3bnVBN67NBEzedqQuWrpP4)
@@ -82,7 +85,7 @@ Unfortunately, our dataset did not contain any songs which completely matched al
 
 [Clean Bandit, Zara Larsson - Symphony (feat. Zara Larsson)](https://open.spotify.com/album/4b13SJlne61y53KSEwuQtD?highlight=spotify:track:1x5sYLZiu9r5E43kMlt9f8)
 
-There were no songs within our dataset which matched the range of every forecasted feature range. The one song we found which had the most in common with the 2025 forecast (7 out of 10) feature ranges was Twenty One Pilots - 'Tear In My Heart'. This song was within our 'danceability', 'duration_ms', 'energy', 'tempo', 'valence', 'popularity', and 'key' error ranges from the actual forecast values. A song with 6 out of 10 shared features was INXS - 'Beautiful Girl'. 2 songs shared 5 out of 10 values. 12 songs shared 4 out of the 10 values.
+The one song we found which had the most in common with the 2025 forecast (7 out of 10) feature ranges was Twenty One Pilots - 'Tear In My Heart'. This song was within our 'danceability', 'duration_ms', 'energy', 'tempo', 'valence', 'popularity', and 'key' error ranges from the actual forecast values. A song with 6 out of 10 shared features was INXS - 'Beautiful Girl'. 2 songs shared 5 out of 10 values. 12 songs shared 4 out of the 10 values.
 
 ## Conclusions
 We have successfully forecasted each of our features. So what do they tell us? Our model predicts that by 2025, the average (median) song will possess the following characteristics:
