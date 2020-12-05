@@ -1,4 +1,4 @@
-Blog Article on Medium: [Predicting the Future Sound of Music With LSTM Modeling](https://medium.com/@oaconn/predicting-the-future-sound-of-music-with-lstm-modeling-85488d8eac18)
+Blog Article on Medium: [Forecasting the Sound of Mainstream Music With Deep Learning](https://medium.com/@oaconn/predicting-the-future-sound-of-music-with-lstm-modeling-85488d8eac18)
 
 # Project Introduction:
 Undoubtedly one of the most popular music streaming platforms today, Spotify, is highly driven by data. Data scientists utilize machine learning for recommender systems which are one of the most popular, and eerily accurate features of the platform, for personally-curated playlists. More thought-out, and even novel features, are constantly sought out to keep users interacting with the platform. 
